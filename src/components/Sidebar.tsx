@@ -2,11 +2,14 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { 
   LayoutDashboard, 
-  ShoppingCart, 
-  Package, 
-  DollarSign, 
+  GraduationCap, 
   Users, 
-  UserCheck, 
+  BookOpen, 
+  Calendar, 
+  DollarSign, 
+  ClipboardList,
+  UserCheck,
+  Library,
   BarChart3,
   Settings,
   Menu,
@@ -17,11 +20,14 @@ import { Button } from "@/components/ui/button";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
-  { icon: ShoppingCart, label: "Sales", path: "/sales" },
-  { icon: Package, label: "Inventory", path: "/inventory" },
-  { icon: DollarSign, label: "Finance", path: "/finance" },
-  { icon: Users, label: "CRM", path: "/crm" },
-  { icon: UserCheck, label: "HR", path: "/hr" },
+  { icon: GraduationCap, label: "Students", path: "/students" },
+  { icon: Users, label: "Teachers", path: "/teachers" },
+  { icon: BookOpen, label: "Academics", path: "/academics" },
+  { icon: Calendar, label: "Attendance", path: "/attendance" },
+  { icon: ClipboardList, label: "Examinations", path: "/examinations" },
+  { icon: DollarSign, label: "Fees", path: "/fees" },
+  { icon: Library, label: "Library", path: "/library" },
+  { icon: UserCheck, label: "Staff", path: "/staff" },
   { icon: BarChart3, label: "Reports", path: "/reports" },
   { icon: Settings, label: "Settings", path: "/settings" },
 ];
@@ -43,7 +49,7 @@ export function Sidebar() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <LayoutDashboard className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-semibold text-lg text-foreground">ERP Pro</span>
+            <span className="font-semibold text-lg text-foreground">School ERP</span>
           </div>
         )}
         <Button

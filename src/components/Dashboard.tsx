@@ -1,11 +1,12 @@
 import { 
-  DollarSign, 
-  ShoppingCart, 
+  GraduationCap, 
   Users, 
-  Package,
+  BookOpen, 
+  Calendar,
   TrendingUp,
   TrendingDown,
-  Activity
+  Activity,
+  Award
 } from "lucide-react";
 import { MetricCard } from "./MetricCard";
 import { RevenueChart, InventoryChart } from "./DashboardChart";
@@ -13,45 +14,45 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const metrics = [
   {
-    title: "Total Revenue",
-    value: "$54,239",
-    change: "+12.5%",
-    changeType: "positive" as const,
-    icon: DollarSign,
-    description: "From 245 sales"
-  },
-  {
-    title: "New Orders",
-    value: "1,429",
-    change: "+8.2%",
-    changeType: "positive" as const,
-    icon: ShoppingCart,
-    description: "Last 30 days"
-  },
-  {
-    title: "Active Customers",
+    title: "Total Students",
     value: "2,847",
-    change: "-3.1%",
-    changeType: "negative" as const,
-    icon: Users,
-    description: "Registered users"
+    change: "+5.2%",
+    changeType: "positive" as const,
+    icon: GraduationCap,
+    description: "Active enrollment"
   },
   {
-    title: "Inventory Items",
-    value: "12,847",
-    change: "+5.4%",
+    title: "Total Teachers",
+    value: "185",
+    change: "+2.1%",
     changeType: "positive" as const,
-    icon: Package,
-    description: "In stock"
+    icon: Users,
+    description: "Teaching staff"
+  },
+  {
+    title: "Active Classes",
+    value: "142",
+    change: "+8.3%",
+    changeType: "positive" as const,
+    icon: BookOpen,
+    description: "This semester"
+  },
+  {
+    title: "Attendance Rate",
+    value: "94.2%",
+    change: "+1.8%",
+    changeType: "positive" as const,
+    icon: Calendar,
+    description: "This month"
   }
 ];
 
 const recentActivities = [
-  { id: 1, action: "New order #1249", time: "2 minutes ago", type: "order" },
-  { id: 2, action: "Customer John Smith registered", time: "5 minutes ago", type: "customer" },
-  { id: 3, action: "Inventory updated for Product A", time: "12 minutes ago", type: "inventory" },
-  { id: 4, action: "Payment received $2,450", time: "18 minutes ago", type: "payment" },
-  { id: 5, action: "New support ticket #847", time: "25 minutes ago", type: "support" },
+  { id: 1, action: "New student Emma Wilson enrolled", time: "2 minutes ago", type: "enrollment" },
+  { id: 2, action: "Math test scheduled for Grade 10", time: "5 minutes ago", type: "exam" },
+  { id: 3, action: "Attendance marked for Class 12-A", time: "12 minutes ago", type: "attendance" },
+  { id: 4, action: "Fee payment received from John Smith", time: "18 minutes ago", type: "payment" },
+  { id: 5, action: "New teacher Sarah Johnson added", time: "25 minutes ago", type: "staff" },
 ];
 
 export function Dashboard() {
@@ -61,7 +62,7 @@ export function Dashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground mt-1">Welcome back! Here's what's happening with your business.</p>
+          <p className="text-muted-foreground mt-1">Welcome back! Here's what's happening at your school.</p>
         </div>
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <Activity className="w-4 h-4" />
@@ -113,29 +114,29 @@ export function Dashboard() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Conversion Rate</span>
+                <span className="text-sm text-muted-foreground">Pass Rate</span>
                 <div className="flex items-center space-x-1">
                   <TrendingUp className="w-4 h-4 text-metric-positive" />
-                  <span className="text-sm font-medium">3.24%</span>
+                  <span className="text-sm font-medium">96.8%</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Avg. Order Value</span>
+                <span className="text-sm text-muted-foreground">Avg. Grade</span>
                 <div className="flex items-center space-x-1">
-                  <TrendingUp className="w-4 h-4 text-metric-positive" />
-                  <span className="text-sm font-medium">$89.50</span>
+                  <Award className="w-4 h-4 text-metric-positive" />
+                  <span className="text-sm font-medium">B+</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Return Rate</span>
+                <span className="text-sm text-muted-foreground">Dropout Rate</span>
                 <div className="flex items-center space-x-1">
-                  <TrendingDown className="w-4 h-4 text-metric-negative" />
-                  <span className="text-sm font-medium">2.1%</span>
+                  <TrendingDown className="w-4 h-4 text-metric-positive" />
+                  <span className="text-sm font-medium">1.2%</span>
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Customer Satisfaction</span>
-                <span className="text-sm font-medium">4.8/5</span>
+                <span className="text-sm text-muted-foreground">Parent Satisfaction</span>
+                <span className="text-sm font-medium">4.7/5</span>
               </div>
             </CardContent>
           </Card>
