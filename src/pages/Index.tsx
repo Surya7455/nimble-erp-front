@@ -3,9 +3,9 @@ import { Outlet } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-dashboard-bg flex">
+    <div className="min-h-screen bg-dashboard-bg">
       <Sidebar />
-      <main className="flex-1 p-6 overflow-auto">
+      <main className="w-full p-6 pl-16 overflow-auto">
         <Outlet />
       </main>
     </div>
