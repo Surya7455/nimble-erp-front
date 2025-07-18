@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-dashboard-bg">
       <Sidebar />
-      <main className="w-full p-6 pl-4 overflow-auto">
+      <main className="w-full pb-6 pr-6 pt-16 pl-4 overflow-auto">
         <Outlet />
       </main>
     </div>
